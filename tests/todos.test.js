@@ -65,10 +65,13 @@ describe('POST /todos', () => {
 
     describe('given a wrong input --> validates request body', () => {
         it('should respond with a status code of 422', async () => {
-            const response = await request(app).post('/todos').send({
-                name: 123,
-            });
-            expect(response.statusCode).toBe(422);
+            const wrongData = [123, 456];
+            for (const data of wrongData) {
+                const response = await request(app).post('/todos').send({
+                    name: data,
+                });
+                expect(response.statusCode).toBe(422);
+            }
         });
     });
 });

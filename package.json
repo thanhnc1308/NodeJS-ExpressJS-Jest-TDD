@@ -23,7 +23,7 @@
     },
     "eslintConfig": {
         "parserOptions": {
-            "ecmaVersion": 6
+            "ecmaVersion": 8
         },
         "extends": "eslint:recommended",
         "env": {

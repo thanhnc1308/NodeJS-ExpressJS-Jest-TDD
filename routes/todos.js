@@ -17,7 +17,7 @@ const todos = [
 /**
  * GET /todos
  */
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res) => {
     try {
         res.json(todos);
     } catch (e) {
@@ -28,7 +28,7 @@ router.get('/', (req, res, next) => {
 /**
  * GET /todos/:id
  */
-router.get('/:id', (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
     try {
         const foundTodo = todos.find(
             (todo) => todo.id === Number(req.params.id)
@@ -46,7 +46,7 @@ router.get('/:id', (req, res, next) => {
 /**
  * POST /todos
  */
-router.post('/', (req, res, next) => {
+router.post('/', async (req, res, next) => {
     try {
         const { body } = req;
 
